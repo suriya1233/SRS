@@ -53,7 +53,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        // Allow all origins - Accept requests from any source
+        // Allow specific origins - Remove wildcard when using credentials
         configuration.setAllowedOriginPatterns(Arrays.asList(
                 "http://localhost:*",
                 "https://localhost:*",
@@ -62,7 +62,7 @@ public class SecurityConfig {
                 "https://*.railway.app",
                 "https://*.vercel.app",
                 "https://*.netlify.app",
-                "*"));
+                "http://*.railway.app"));
 
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"));
         configuration.setAllowedHeaders(Arrays.asList("*"));

@@ -32,12 +32,11 @@ public class CorsFilter implements Filter {
 
         String origin = request.getHeader("Origin");
 
-        // Allow specific origins
-        if (origin != null && (origin.equals("http://localhost:5173") ||
-                origin.equals("http://localhost:3000") ||
-                origin.equals("http://127.0.0.1:5173") ||
-                origin.equals("http://127.0.0.1:3000"))) {
+        // Allow all origins
+        if (origin != null) {
             response.setHeader("Access-Control-Allow-Origin", origin);
+        } else {
+            response.setHeader("Access-Control-Allow-Origin", "*");
         }
 
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS, HEAD");

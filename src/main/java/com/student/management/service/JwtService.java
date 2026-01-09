@@ -9,10 +9,6 @@ import org.springframework.stereotype.Service;
 import javax.crypto.SecretKey;
 import java.time.Instant;
 import java.util.Date;
-<<<<<<< HEAD
-import java.util.Map;
-=======
->>>>>>> 0eaaef46b2b45e00cea312cbaefd0b1866c7e419
 import java.util.function.Function;
 
 @Service
@@ -22,20 +18,14 @@ public class JwtService {
     private final long expirationMs;
 
     public JwtService(
-<<<<<<< HEAD
             @Value("${jwt.secret}") String secret,
             @Value("${jwt.expiration}") long expirationMs) {
-=======
-            @Value("${application.jwt.secret}") String secret,
-            @Value("${application.jwt.expiration}") long expirationMs) {
->>>>>>> 0eaaef46b2b45e00cea312cbaefd0b1866c7e419
         this.signingKey = Keys.hmacShaKeyFor(secret.getBytes());
         this.expirationMs = expirationMs;
     }
 
     public String generateToken(UserAccount user) {
         Instant now = Instant.now();
-<<<<<<< HEAD
 
         // Build claims map - conditionally add studentId if present
         var claimsBuilder = Jwts.builder()
@@ -52,21 +42,6 @@ public class JwtService {
                 .expiration(Date.from(now.plusMillis(expirationMs)))
                 .signWith(signingKey)
                 .compact();
-=======
-        var builder = Jwts.builder()
-                .subject(user.getUsername())
-                .claim("role", user.getRole().name())
-                .issuedAt(Date.from(now))
-                .expiration(Date.from(now.plusMillis(expirationMs)))
-                .signWith(signingKey);
-
-        // Only add studentId if it's not null
-        if (user.getStudentId() != null) {
-            builder.claim("studentId", user.getStudentId());
-        }
-
-        return builder.compact();
->>>>>>> 0eaaef46b2b45e00cea312cbaefd0b1866c7e419
     }
 
     public String extractUsername(String token) {

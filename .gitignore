@@ -24,15 +24,6 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-<<<<<<< HEAD
-=======
-/m2/
-
-# Node modules (if using Node build tools)
-/node_modules
-package-lock.json
-yarn.lock
->>>>>>> 0eaaef46b2b45e00cea312cbaefd0b1866c7e419
 
 # IDE
 .idea/
@@ -54,12 +45,3 @@ Thumbs.db
 
 # Spring Boot
 application-local.properties
-<<<<<<< HEAD
-=======
-application-dev.properties
-application-prod.properties
-
-# Environment variables
-.env
-.env.local
->>>>>>> 0eaaef46b2b45e00cea312cbaefd0b1866c7e419

@@ -22,9 +22,12 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/attendance")
+<<<<<<< HEAD
 
 @CrossOrigin(origins = "*")
 
+=======
+>>>>>>> 0eaaef46b2b45e00cea312cbaefd0b1866c7e419
 public class AttendanceController {
 
     private final AttendanceRepository attendanceRepository;

@@ -101,3 +101,7 @@ src/main/java/com/student/
 - The application auto-creates database tables on startup
 - Sample data is initialized automatically via `DataInitializer`
 
+<<<<<<< HEAD
+=======
+"# Student_management_Backend" 
+>>>>>>> 0eaaef46b2b45e00cea312cbaefd0b1866c7e419

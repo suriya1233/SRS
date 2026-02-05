@@ -1,0 +1,88 @@
+# -------------------------
+# Node.js
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+.env.local
+.env.development
+.env.production
+
+# -------------------------
+# Logs
+# -------------------------
+logs/
+*.log
+
+# -------------------------
+# Runtime data
+# -------------------------
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# -------------------------
+# Coverage & Test reports
+# -------------------------
+coverage/
+.nyc_output/
+
+# -------------------------
+# Build output
+# -------------------------
+dist/
+build/
+
+# -------------------------
+# Temporary files
+# -------------------------
+tmp/
+temp/
+.cache/
+
+# -------------------------
+# IDE & Editor settings
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Database dumps
+# -------------------------
+*.dump
+*.sql
+*.sqlite
+
+# -------------------------
+# Uploads (optional)
+# Uncomment if uploads are generated dynamically
+# -------------------------
+uploads/
+
+# -------------------------
+# CSV / Excel test files (optional)
+# Keep sample files only
+# -------------------------
+data/uploads/
+!data/sample-data/
+
+# -------------------------
+# Process managers
+# -------------------------
+.pm2/

@@ -34,27 +34,27 @@ app.use(helmet());
 
 // CORS configuration
 app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps, curl, Postman)
+    origin: (origin, callback) => {
+        // Allow server-to-server, Postman, curl
         if (!origin) return callback(null, true);
 
-        // In development, allow any localhost origin
-        if (process.env.NODE_ENV === 'development' && origin.includes('localhost')) {
+        const allowedOrigins = [
+            'https://srs-frontend-a0za.onrender.com',
+    'http://localhost:5173',
+    'http://localhost:3000'
+        ];
+
+        if (allowedOrigins.includes(origin)) {
             return callback(null, true);
         }
 
-        // In production, only allow configured frontend URL
-        if (origin === process.env.FRONTEND_URL) {
-            return callback(null, true);
-        }
-
-        callback(new Error('Not allowed by CORS'));
+        return callback(new Error('Not allowed by CORS'));
     },
     credentials: true,
-    origin:['https://srs-frontend-a0za.onrender.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 // Rate limiting
 const limiter = rateLimit({
